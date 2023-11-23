@@ -1,1 +1,3 @@
-vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle undotree" })
+local nmap = require("core.keymap").nmap
+
+nmap("<leader>u", "<cmd>UndotreeToggle<cr>", "Toggle undotree")

@@ -1,10 +1,11 @@
+local nmap = require("core.keymap").nmap
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
-vim.keymap.set("n", "<leader>a", mark.add_file, { desc = "Harpoon add file" })
-vim.keymap.set("n", "<leader>h", ui.toggle_quick_menu, { desc = "Harpoon quick menu" })
+nmap("<leader>a", mark.add_file, "Harpoon add file")
+nmap("<leader>h", ui.toggle_quick_menu, "Harpoon quick menu")
 
-vim.keymap.set("n", "<leader>1", function() ui.nav_file(1) end, { desc = "Harpoon to 1" })
-vim.keymap.set("n", "<leader>2", function() ui.nav_file(2) end, { desc = "Harpoon to 2" })
-vim.keymap.set("n", "<leader>3", function() ui.nav_file(3) end, { desc = "Harpoon to 3" })
-vim.keymap.set("n", "<leader>4", function() ui.nav_file(4) end, { desc = "Harpoon to 4" })
+nmap("<leader>1", function() ui.nav_file(1) end, "Harpoon to 1")
+nmap("<leader>2", function() ui.nav_file(2) end, "Harpoon to 2")
+nmap("<leader>3", function() ui.nav_file(3) end, "Harpoon to 3")
+nmap("<leader>4", function() ui.nav_file(4) end, "Harpoon to 4")

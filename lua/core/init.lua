@@ -1,5 +1,7 @@
 require("core.mappings")
 require("core.lazy")
+require("core.keymap")
+
 vim.cmd.colorscheme("onedark")
 vim.wo.number = true
 vim.wo.relativenumber = true

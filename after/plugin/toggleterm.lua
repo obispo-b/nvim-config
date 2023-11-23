@@ -1,2 +1,5 @@
-vim.keymap.set("n", "<M-i>", "<cmd>ToggleTerm direction=float<cr>", { desc = "Toggle terminal" })
-vim.keymap.set("t", "<M-i>", "<cmd>ToggleTerm direction=float<cr>", { desc = "Toggle terminal" })
+local nmap = require('core.keymap').nmap
+local tmap = require('core.keymap').tmap
+
+nmap("<M-i>", "<cmd>ToggleTerm direction=float<cr>", "Toggle terminal")
+tmap("<M-i>", "<cmd>ToggleTerm direction=float<cr>", "Toggle terminal")

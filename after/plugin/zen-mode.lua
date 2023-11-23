@@ -1,1 +1,3 @@
-vim.keymap.set('n', '<leader>z', ':ZenMode<CR>', { noremap = true, silent = true })
+local nmap = require("core.keymap").nmap
+
+nmap('<leader>z', ':ZenMode<CR>', 'Toggle zen mode')

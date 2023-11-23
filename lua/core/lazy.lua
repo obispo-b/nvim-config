@@ -1,8 +1,6 @@
 local plugins = {
   -- Git related plugins
-  {
-    'tpope/vim-fugitive',
-  },
+  { 'tpope/vim-fugitive' },
   {
     -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
@@ -36,22 +34,10 @@ local plugins = {
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
   },
-  {
-    "folke/zen-mode.nvim",
-    --event = "BufEnter",
-  },
-  {
-    "ThePrimeagen/harpoon",
-    --event = "BufEnter",
-  },
-  {
-    "ThePrimeagen/vim-be-good",
-    --event = "BufEnter",
-  },
-  {
-    "github/copilot.vim",
-
-  },
+  { "folke/zen-mode.nvim" },
+  { "ThePrimeagen/harpoon" },
+  { "ThePrimeagen/vim-be-good" },
+  { "github/copilot.vim" },
   {
     "windwp/nvim-ts-autotag",
     config = function() require("nvim-ts-autotag").setup() end,
@@ -108,7 +94,8 @@ local plugins = {
     config = function()
       require("nvim-tree").setup {}
     end,
-  }
+  },
+  { "numToStr/Comment.nvim" }
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
