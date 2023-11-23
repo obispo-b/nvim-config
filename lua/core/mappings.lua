@@ -13,3 +13,9 @@ vim.keymap.set("n", "N", "nzzzv", { desc = "Move to previous search match and ce
 vim.keymap.set("x", "<leader>p", '"_dP', { desc = "Paste without overwriting clipboard" })
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- Switch between split windows using Ctrl + hjkl
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })

@@ -13,3 +13,16 @@ vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
 vim.keymap.set('n', '<leader>fw', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+require('telescope').setup {
+  defaults = {
+    sorting_strategy = "ascending",
+    layout_config = {
+      horizontal = { prompt_position = "top", preview_width = 0.55 },
+      vertical = { mirror = false },
+      width = 0.87,
+      height = 0.80,
+      preview_cutoff = 120,
+    },
+  },
+}
