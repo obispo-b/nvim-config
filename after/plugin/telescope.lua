@@ -1,6 +1,7 @@
 local nmap = require("core.keymap").nmap
 local builtin = require("telescope.builtin")
 
+-- Mappings
 nmap("<leader>sw", builtin.grep_string, "Search Word")
 nmap("<leader>fd", builtin.diagnostics, "Find Diagnostics")
 nmap("<leader>fr", builtin.resume, "Resume Last Search")
@@ -10,6 +11,7 @@ nmap("<leader>fw", builtin.live_grep, "Live Grep")
 nmap("<leader>fb", builtin.buffers, "Find Buffers")
 nmap("<leader>fh", builtin.help_tags, "Find Help")
 
+-- Config
 require("telescope").setup({
 	defaults = {
 		sorting_strategy = "ascending",
