@@ -1,3 +1,3 @@
-local nmap = require("core.keymap").nmap
+local nmap = require('core.keymap').nmap
 
-nmap("<leader>u", "<cmd>UndotreeToggle<cr>", "Toggle undotree")
+nmap('<leader>u', '<cmd>UndotreeToggle<cr>', 'Toggle undotree')

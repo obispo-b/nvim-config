@@ -1,5 +1,5 @@
 -- Theme
-vim.cmd.colorscheme("gruvbox-material")
+vim.cmd.colorscheme 'gruvbox-material'
 
 -- Show line numbers
 vim.wo.number = true
@@ -12,7 +12,7 @@ vim.o.breakindent = true
 vim.o.undofile = true
 
 -- Share clipboard between vim and system
-vim.o.clipboard = "unnamedplus"
+vim.o.clipboard = 'unnamedplus'
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
@@ -34,11 +34,11 @@ vim.opt.scrolloff = 8
 vim.opt.hlsearch = false
 
 -- Show sign column
-vim.wo.signcolumn = "yes"
+vim.wo.signcolumn = 'yes'
 
 -- Decrease update time
 vim.o.updatetime = 250
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = 'menuone,noselect'
