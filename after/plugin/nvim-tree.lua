@@ -7,5 +7,6 @@ local toggleTreeFocus = function()
 		vim.cmd("NvimTreeFocus")
 	end
 end
--- nmap("<leader>e", "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree")
-nmap("<leader>o", toggleTreeFocus, "Toggle Explorer Focus")
+
+nmap("<leader>e", "<cmd> NvimTreeToggle <CR>", "Toggle NvimTree")
+nmap("<leader>o", toggleTreeFocus, "Toggle NvimTree Focus")

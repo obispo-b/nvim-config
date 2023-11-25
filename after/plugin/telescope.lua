@@ -14,9 +14,9 @@ nmap("<leader>fh", builtin.help_tags, "Find Help")
 -- Config
 require("telescope").setup({
 	defaults = {
-		sorting_strategy = "ascending",
+		sorting_strategy = "descending",
 		layout_config = {
-			horizontal = { prompt_position = "top", preview_width = 0.55 },
+			horizontal = { prompt_position = "bottom", preview_width = 0.55 },
 			vertical = { mirror = false },
 			width = 0.87,
 			height = 0.80,

@@ -2,8 +2,6 @@ local nmap = require("core.keymap").nmap
 local xmap = require("core.keymap").xmap
 
 vim.g.mapleader = " "
-nmap("<leader>e", "<cmd>Lexplore<cr>", "Open command line window")
--- vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
 
 local formatAndSave = function()
 	vim.lsp.buf.format()

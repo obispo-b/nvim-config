@@ -83,7 +83,7 @@ local plugins = {
 	},
 	{
 		"nvim-tree/nvim-tree.lua",
-		enabled = false,
+		enabled = true,
 		version = "*",
 		lazy = false,
 		dependencies = {
@@ -94,10 +94,6 @@ local plugins = {
 		end,
 	},
 	{ "numToStr/Comment.nvim" },
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-	},
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
