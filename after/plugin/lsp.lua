@@ -22,6 +22,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
     vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
 
+    -- Telescope
+    vim.keymap.set('n', '<leader>ls', '<cmd>Telescope lsp_document_symbols<CR>', opts)
+    vim.keymap.set('n', '<leader>ld', '<cmd>Telescope diagnostics<CR>', opts)
+
     -- nmap('<leader>ls', '<cmd>Telescope lsp_document_symbols<CR>', 'Find Symbols')
     -- nmap('<leader>ld', '<cmd>Telescope diagnostics<CR>', 'Find Diagnostics')
     -- nmap('K', '<cmd>lua vim.lsp.buf.hover()<cr>', 'LSP Hover')
