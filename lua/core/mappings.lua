@@ -17,8 +17,12 @@ nmap('N', 'nzzzv', 'Move to previous search match and center')
 xmap('<leader>p', '"_dP', 'Paste without overwriting clipboard')
 nmap('<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace word under cursor in buffer')
 
+nmap('<esc>', '<cmd>noh<cr>', 'Clear search highlights')
+
+nmap('<leader>,', '<cmd>bp<cr>', 'Go to previous buffer')
+
 -- Switch between split windows using Ctrl + hjkl
-nmap('<C-l>', '<C-w>l')
-nmap('<C-h>', '<C-w>h')
-nmap('<C-j>', '<C-w>j')
-nmap('<C-k>', '<C-w>k')
+nmap('<C-h>', '<C-w>h', 'Move to left split')
+nmap('<C-j>', '<C-w>j', 'Move to bottom split')
+nmap('<C-k>', '<C-w>k', 'Move to top split')
+nmap('<C-l>', '<C-w>l', 'Move to right split')
