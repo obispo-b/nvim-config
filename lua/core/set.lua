@@ -31,7 +31,7 @@ vim.opt.softtabstop = 2
 vim.opt.scrolloff = 8
 
 -- Disable highlight on search
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 
 -- Show sign column
 vim.wo.signcolumn = 'yes'
@@ -42,3 +42,10 @@ vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
+
+-- netrw
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 0
+vim.g.netrw_altv = 1
+vim.g.netrw_winsize = 15
+vim.g.netrw_localrmdir = 'rm -r'
