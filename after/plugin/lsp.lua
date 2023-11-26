@@ -4,46 +4,36 @@ local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 vim.api.nvim_create_autocmd('LspAttach', {
   desc = 'LSP actions',
   callback = function(event)
-    local opts = { buffer = event.buf }
+    -- local opts = { buffer = event.buf }
+
+    local nmap = function(keys, func, desc)
+      if desc then
+        desc = 'LSP ' .. desc
+      end
+
+      vim.keymap.set('n', keys, func, { buffer = event.buf, desc = desc })
+    end
 
     -- Mappings
-    vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-    vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-    vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-    vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-    vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-    vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    vim.keymap.set({ 'n', 'x' }, '<leader>fm', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-
-    vim.keymap.set('n', 'ld', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
-    vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
-    vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
+    nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
+    nmap('gd', vim.lsp.buf.definition, 'Goto Definition')
+    nmap('gD', vim.lsp.buf.declaration, 'Goto Declaration')
+    nmap('gi', vim.lsp.buf.implementation, 'Goto Implementation')
+    nmap('go', vim.lsp.buf.type_definition, 'Goto Type Definition')
+    nmap('gr', vim.lsp.buf.references, 'Goto References')
+    nmap('gs', vim.lsp.buf.signature_help, 'Signature Help')
+    nmap('ld', vim.diagnostic.open_float, 'Open Diagnostics')
+    nmap('[d', vim.diagnostic.goto_prev, 'Goto Previous Diagnostic')
+    nmap(']d', vim.diagnostic.goto_next, 'Goto Next Diagnostic')
+    nmap('<leader>rn', vim.lsp.buf.rename, 'Rename')
+    nmap('<leader>fm', vim.lsp.buf.format, 'Format')
+    nmap('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
 
     -- Telescope
-    vim.keymap.set('n', '<leader>ls', '<cmd>Telescope lsp_document_symbols<CR>', opts)
-    vim.keymap.set('n', '<leader>ld', '<cmd>Telescope diagnostics<CR>', opts)
-
-    -- nmap('<leader>ls', '<cmd>Telescope lsp_document_symbols<CR>', 'Find Symbols')
-    -- nmap('<leader>ld', '<cmd>Telescope diagnostics<CR>', 'Find Diagnostics')
-    -- nmap('K', '<cmd>lua vim.lsp.buf.hover()<cr>', 'LSP Hover')
-    -- nmap('gd', '<cmd>lua vim.lsp.buf.definition()<cr>', 'LSP Goto Definition')
-    -- nmap('gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-    -- nmap('gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-    -- nmap('go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-    -- nmap('gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-    -- nmap('gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-    -- nmap('<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-    -- nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-    -- nmap('<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-    -- nmap('gl', '<cmd>lua vim.diagnostic.open_float()<cr>', opts)
-    -- nmap('[d', '<cmd>lua vim.diagnostic.goto_prev()<cr>', opts)
-    -- nmap(']d', '<cmd>lua vim.diagnostic.goto_next()<cr>', opts)
-    -- nmap('<leader>fm', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-    -- nmap('<leader>ls', '<cmd>Telescope lsp_document_symbols<CR>', opts)
-    -- nmap('<leader>ld', '<cmd>Telescope diagnostics<CR>', opts)
+    nmap('<leader>ls', '<cmd>Telescope lsp_document_symbols<cr>', 'Document Symbols')
+    nmap('<leader>ws', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', 'Workspace Symbols')
+    nmap('<leader>ld', '<cmd>Telescope diagnostics<cr>', 'Workspace Diagnostics')
+    nmap('<leader>rs', '<cmd>Telescope resume<cr>', 'Resume Last Telescope Session')
   end,
 })
 local default_setup = function(server)

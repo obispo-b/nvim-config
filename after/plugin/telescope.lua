@@ -4,7 +4,7 @@ local builtin = require 'telescope.builtin'
 -- Mappings
 nmap('<leader>sw', builtin.grep_string, 'Search Word')
 nmap('<leader>fd', builtin.diagnostics, 'Find Diagnostics')
-nmap('<leader>fr', builtin.resume, 'Resume Last Search')
+nmap('<leader>rs', builtin.resume, 'Resume Last Search')
 nmap('<leader>ff', builtin.find_files, 'Find Files')
 nmap('<leader>fg', builtin.git_files, 'Find Git Files')
 nmap('<leader>fw', builtin.live_grep, 'Live Grep')
