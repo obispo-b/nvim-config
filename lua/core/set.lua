@@ -31,7 +31,7 @@ vim.opt.softtabstop = 2
 vim.opt.scrolloff = 8
 
 -- Disable highlight on search
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 
 -- Show sign column
 vim.wo.signcolumn = 'yes'

@@ -19,7 +19,7 @@ nmap('<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Repla
 
 nmap('<esc>', '<cmd>noh<cr>', 'Clear search highlights')
 
-nmap('<leader>,', '<cmd>bp<cr>', 'Go to previous buffer')
+nmap('<leader>,', '<C-^>', 'Alternate between buffers')
 
 -- Switch between split windows using Ctrl + hjkl
 nmap('<C-h>', '<C-w>h', 'Move to left split')
