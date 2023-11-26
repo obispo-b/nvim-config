@@ -1,15 +1,20 @@
 local nmap = require('core.keymap').nmap
-local builtin = require 'telescope.builtin'
+local b = require 'telescope.builtin'
 
 -- Mappings
-nmap('<leader>sw', builtin.grep_string, 'Search Word')
-nmap('<leader>fd', builtin.diagnostics, 'Find Diagnostics')
-nmap('<leader>rs', builtin.resume, 'Resume Last Search')
-nmap('<leader>ff', builtin.find_files, 'Find Files')
-nmap('<leader>fg', builtin.git_files, 'Find Git Files')
-nmap('<leader>fw', builtin.live_grep, 'Live Grep')
-nmap('<leader>fb', builtin.buffers, 'Find Buffers')
-nmap('<leader>fh', builtin.help_tags, 'Find Help')
+nmap('<leader>sw', b.grep_string, 'Search Word')
+nmap('<leader>fd', b.diagnostics, 'Find Diagnostics')
+nmap('<leader>rs', b.resume, 'Resume Last Search')
+nmap('<leader>ff', b.find_files, 'Find Files')
+nmap('<leader>fg', b.git_files, 'Find Git Files')
+nmap('<leader>fw', b.live_grep, 'Live Grep')
+nmap('<leader>fh', b.help_tags, 'Find Help')
+nmap('<leader>f/', b.current_buffer_fuzzy_find, 'Find in Buffer')
+nmap('<leader>fb', b.git_branches, 'Find Branches')
+nmap('<leader>fc', b.git_commits, 'Find Commits')
+nmap('<leader>fS', b.git_stash, 'Find Stash')
+nmap('<leader>fs', b.git_status, 'Find Status')
+nmap('<leader>fC', b.git_bcommits, 'Find Buffer Commits')
 
 -- Config
 require('telescope').setup {
