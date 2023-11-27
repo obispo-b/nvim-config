@@ -15,7 +15,11 @@ nmap('n', 'nzzzv', 'Move to next search match and center')
 nmap('N', 'nzzzv', 'Move to previous search match and center')
 
 xmap('<leader>p', '"_dP', 'Paste without overwriting clipboard')
-nmap('<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], 'Replace word under cursor in buffer')
+nmap(
+  '<leader>s',
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  'Replace word under cursor in buffer'
+)
 
 nmap('<esc>', '<cmd>noh<cr>', 'Clear search highlights')
 
