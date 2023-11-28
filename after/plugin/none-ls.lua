@@ -1,22 +1,20 @@
 local null_ls = require 'null-ls'
 
-local builtin = null_ls.builtins
+local b = null_ls.builtins
 
 local sources = {
   -- webdev
-  builtin.formatting.deno_fmt,
-  builtin.formatting.prettier.with {
-    filetypes = { 'html', 'markdown', 'css', 'javascript' },
-  },
+  b.formatting.deno_fmt,
+  b.formatting.prettierd, --.with { filetypes = { 'html', 'markdown', 'css', 'javascript' } },
 
   -- bash
-  builtin.formatting.shfmt,
+  b.formatting.shfmt,
 
   -- Lua
-  builtin.formatting.stylua,
+  b.formatting.stylua,
 
   -- C/C++
-  builtin.formatting.clang_format,
+  b.formatting.clang_format,
 }
 
 null_ls.setup {

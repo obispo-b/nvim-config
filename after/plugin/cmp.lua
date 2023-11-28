@@ -3,6 +3,8 @@ local cmp = require 'cmp'
 cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' },
   },
   mapping = cmp.mapping.preset.insert {
     -- Enter key confirms completion item
