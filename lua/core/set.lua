@@ -1,5 +1,5 @@
 -- Theme
-vim.cmd.colorscheme 'gruvbox-material'
+vim.cmd.colorscheme('gruvbox-material')
 
 -- Show line numbers
 vim.wo.number = true
@@ -12,7 +12,7 @@ vim.o.breakindent = true
 vim.o.undofile = true
 
 -- Share clipboard between vim and system
-vim.o.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
 
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true

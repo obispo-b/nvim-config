@@ -1,6 +1,6 @@
 local nmap = require('core.keymap').nmap
-local mark = require 'harpoon.mark'
-local ui = require 'harpoon.ui'
+local mark = require('harpoon.mark')
+local ui = require('harpoon.ui')
 
 nmap('<leader>a', mark.add_file, 'Harpoon add file')
 nmap('<leader>h', ui.toggle_quick_menu, 'Harpoon quick menu')

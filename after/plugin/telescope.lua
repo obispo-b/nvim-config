@@ -1,5 +1,5 @@
 local nmap = require('core.keymap').nmap
-local b = require 'telescope.builtin'
+local b = require('telescope.builtin')
 
 -- Mappings
 nmap('<leader>sw', b.grep_string, 'Search Word')
@@ -17,7 +17,7 @@ nmap('<leader>fs', b.git_status, 'Find Status')
 nmap('<leader>fC', b.git_bcommits, 'Find Buffer Commits')
 
 -- Config
-require('telescope').setup {
+require('telescope').setup({
   defaults = {
     sorting_strategy = 'descending',
     layout_config = {
@@ -28,4 +28,4 @@ require('telescope').setup {
       preview_cutoff = 120,
     },
   },
-}
+})

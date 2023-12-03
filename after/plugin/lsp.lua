@@ -1,4 +1,4 @@
-local lspconfig = require 'lspconfig'
+local lspconfig = require('lspconfig')
 local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -53,13 +53,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,
 })
 local default_setup = function(server)
-  lspconfig[server].setup {
+  lspconfig[server].setup({
     capabilities = lsp_capabilities,
-  }
+  })
 end
 
-require('mason').setup {}
-require('mason-lspconfig').setup {
+require('mason').setup({})
+require('mason-lspconfig').setup({
   ensure_installed = {
     'lua_ls',
     'bashls',
@@ -71,9 +71,9 @@ require('mason-lspconfig').setup {
     'cssls',
   },
   handlers = { default_setup },
-}
+})
 
-lspconfig.lua_ls.setup {
+lspconfig.lua_ls.setup({
   settings = {
     Lua = {
       runtime = {
@@ -98,4 +98,4 @@ lspconfig.lua_ls.setup {
       },
     },
   },
-}
+})

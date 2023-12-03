@@ -2,9 +2,9 @@ local nmap = require('core.keymap').nmap
 
 local toggleTreeFocus = function()
   if vim.bo.filetype == 'NvimTree' then
-    vim.api.nvim_input '<C-w>l'
+    vim.api.nvim_input('<C-w>l')
   else
-    vim.cmd 'NvimTreeFocus'
+    vim.cmd('NvimTreeFocus')
   end
 end
 

@@ -5,14 +5,21 @@ vim.g.mapleader = ' '
 
 local formatAndSave = function()
   vim.lsp.buf.format()
-  vim.cmd 'w'
+  vim.cmd('w')
 end
 
 nmap('<leader>w', formatAndSave, 'Format and save buffer')
-nmap('<leader>q', '<cmd>qa!<cr>', 'Quit without saving')
+nmap('<leader>q', '<cmd>qa!<cr>', 'Quit all without saving')
+nmap('<C-q>', '<cmd>q<cr>', 'Quit current buffer')
 
 nmap('n', 'nzzzv', 'Move to next search match and center')
 nmap('N', 'nzzzv', 'Move to previous search match and center')
+nmap('G', 'Gzzzv', 'Move to end of file and center')
+nmap('<C-u>', '<C-u>zz', 'Move half page up and center')
+nmap('<C-d>', '<C-d>zz', 'Move half page down and center')
+
+nmap('|', '<cmd>vsplit<cr>', 'Split window vertically')
+nmap('\\', '<cmd>split<cr>', 'Split window horizontally')
 
 xmap('<leader>p', '"_dP', 'Paste without overwriting clipboard')
 nmap(
