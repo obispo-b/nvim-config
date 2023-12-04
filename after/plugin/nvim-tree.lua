@@ -8,5 +8,5 @@ local toggleTreeFocus = function()
   end
 end
 
-nmap('<leader>e', '<cmd> NvimTreeToggle <CR>', 'Toggle NvimTree')
+-- nmap('<leader>e', '<cmd> NvimTreeToggle <CR>', 'Toggle NvimTree')
 nmap('<leader>o', toggleTreeFocus, 'Toggle NvimTree Focus')

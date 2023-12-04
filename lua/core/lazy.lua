@@ -34,7 +34,7 @@ local plugins = {
   },
   { 'folke/zen-mode.nvim' },
   { 'ThePrimeagen/harpoon' },
-  { 'ThePrimeagen/vim-be-good' },
+  -- { 'ThePrimeagen/vim-be-good' },
   { 'github/copilot.vim' },
   {
     'windwp/nvim-ts-autotag',
@@ -76,24 +76,6 @@ local plugins = {
   { 'L3MON4D3/LuaSnip' },
   { 'hrsh7th/cmp-buffer' },
   { 'hrsh7th/cmp-path' },
-
-  {
-    'akinsho/toggleterm.nvim',
-    version = '*',
-    config = true,
-  },
-  {
-    'nvim-tree/nvim-tree.lua',
-    enabled = true,
-    version = '*',
-    lazy = false,
-    dependencies = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    config = function()
-      require('nvim-tree').setup({})
-    end,
-  },
   { 'numToStr/Comment.nvim' },
 }
 
