@@ -10,6 +10,7 @@ local plugins = {
   },
   {
     'nvim-lualine/lualine.nvim',
+    enabled = true,
     opts = {
       options = {
         icons_enabled = false,
@@ -24,6 +25,7 @@ local plugins = {
     tag = '0.1.4',
     dependencies = { 'nvim-lua/plenary.nvim' },
   },
+  { 'akinsho/toggleterm.nvim', version = '*', config = true },
   {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
@@ -34,7 +36,7 @@ local plugins = {
   },
   { 'folke/zen-mode.nvim' },
   { 'ThePrimeagen/harpoon' },
-  -- { 'ThePrimeagen/vim-be-good' },
+  { 'ThePrimeagen/vim-be-good' },
   { 'github/copilot.vim' },
   {
     'windwp/nvim-ts-autotag',
@@ -60,22 +62,20 @@ local plugins = {
     'sainnhe/gruvbox-material',
     config = function()
       vim.g.gruvbox_material_foreground = 'original' -- material, mix, original
-      vim.g.gruvbox_material_background = 'hard' -- hard, medium, soft
+      vim.g.gruvbox_material_background = 'medium' -- hard, medium, soft
     end,
-  },
-  {
-    'navarasu/onedark.nvim',
   },
   { 'mbbill/undotree' },
   -- Lsp plugins
   { 'neovim/nvim-lspconfig' },
   { 'williamboman/mason.nvim' },
+  { 'L3MON4D3/LuaSnip' },
   { 'williamboman/mason-lspconfig.nvim' },
   { 'hrsh7th/nvim-cmp' },
   { 'hrsh7th/cmp-nvim-lsp' },
-  { 'L3MON4D3/LuaSnip' },
   { 'hrsh7th/cmp-buffer' },
   { 'hrsh7th/cmp-path' },
+
   { 'numToStr/Comment.nvim' },
 }
 

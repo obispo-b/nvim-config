@@ -9,10 +9,11 @@ local formatAndSave = function()
 end
 
 nmap('<leader>e', '<cmd>Explore<cr>', 'Open file explorer')
+nmap('<leader>o', '<cmd>Lexplore<cr>', 'Open file explorer')
 
 nmap('<leader>w', formatAndSave, 'Format and save buffer')
 nmap('<leader>q', '<cmd>qa!<cr>', 'Quit all without saving')
-nmap('<C-q>', '<cmd>q<cr>', 'Quit current buffer')
+nmap('<C-q>', '<cmd>q!<cr>', 'Quit current buffer without saving')
 
 nmap('n', 'nzzzv', 'Move to next search match and center')
 nmap('N', 'nzzzv', 'Move to previous search match and center')
