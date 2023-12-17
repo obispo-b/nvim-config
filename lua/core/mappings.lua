@@ -2,6 +2,7 @@ local nmap = require('core.keymap').nmap
 local xmap = require('core.keymap').xmap
 
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ','
 
 local formatAndSave = function()
   vim.lsp.buf.format()
