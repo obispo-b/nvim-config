@@ -77,6 +77,12 @@ local plugins = {
   { 'hrsh7th/cmp-path' },
 
   { 'numToStr/Comment.nvim' },
+
+  {
+    'nvim-neorg/neorg',
+    build = ':Neorg sync-parsers',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
 }
 
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
