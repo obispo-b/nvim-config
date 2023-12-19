@@ -65,6 +65,17 @@ local plugins = {
       vim.g.gruvbox_material_background = 'medium' -- hard, medium, soft
     end,
   },
+  {
+    'nvim-tree/nvim-tree.lua',
+    version = '*',
+    lazy = false,
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require('nvim-tree').setup({})
+    end,
+  },
   { 'mbbill/undotree' },
   -- Lsp plugins
   { 'neovim/nvim-lspconfig' },
@@ -77,11 +88,34 @@ local plugins = {
   { 'hrsh7th/cmp-path' },
 
   { 'numToStr/Comment.nvim' },
-
   {
-    'nvim-neorg/neorg',
-    build = ':Neorg sync-parsers',
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    'folke/which-key.nvim',
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
+  -- {
+  --   'nvim-neorg/neorg',
+  --   build = ':Neorg sync-parsers',
+  --   dependencies = { 'nvim-lua/plenary.nvim' },
+  -- },
+  {
+    'nvim-orgmode/orgmode',
+    dependencies = {
+      { 'nvim-treesitter/nvim-treesitter', lazy = true },
+    },
+  },
+  {
+    'akinsho/org-bullets.nvim',
+    config = function()
+      require('org-bullets').setup()
+    end,
   },
 }
 

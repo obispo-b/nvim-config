@@ -49,3 +49,6 @@ vim.g.netrw_liststyle = 3
 vim.g.netrw_altv = 1
 vim.g.netrw_winsize = 20
 vim.g.netrw_localrmdir = 'rm -r'
+
+-- Set conceallevel to 2
+vim.opt.conceallevel = 2

@@ -9,8 +9,8 @@ local formatAndSave = function()
   vim.cmd('w')
 end
 
-nmap('<leader>e', '<cmd>Explore<cr>', 'Open file explorer')
-nmap('<leader>o', '<cmd>Lexplore<cr>', 'Open file explorer')
+-- nmap('<leader>e', '<cmd>Explore<cr>', 'Open file explorer')
+-- nmap('<leader>o', '<cmd>Lexplore<cr>', 'Open file explorer')
 
 nmap('<leader>w', formatAndSave, 'Format and save buffer')
 nmap('<leader>q', '<cmd>qa!<cr>', 'Quit all without saving')
