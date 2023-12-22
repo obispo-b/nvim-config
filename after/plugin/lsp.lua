@@ -30,26 +30,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     nmap('<leader>ca', vim.lsp.buf.code_action, 'Code Action')
 
     -- Telescope
-    nmap(
-      '<leader>ls',
-      '<cmd>Telescope lsp_document_symbols<cr>',
-      'Document Symbols'
-    )
-    nmap(
-      '<leader>ws',
-      '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>',
-      'Workspace Symbols'
-    )
-    nmap(
-      '<leader>ld',
-      '<cmd>Telescope diagnostics<cr>',
-      'Workspace Diagnostics'
-    )
-    nmap(
-      '<leader>rs',
-      '<cmd>Telescope resume<cr>',
-      'Resume Last Telescope Session'
-    )
+    nmap('<leader>ls', '<cmd>Telescope lsp_document_symbols<cr>', 'Document Symbols')
+    nmap('<leader>ws', '<cmd>Telescope lsp_dynamic_workspace_symbols<cr>', 'Workspace Symbols')
+    nmap('<leader>ld', '<cmd>Telescope diagnostics<cr>', 'Workspace Diagnostics')
+    nmap('<leader>rs', '<cmd>Telescope resume<cr>', 'Resume Last Telescope Session')
   end,
 })
 local default_setup = function(server)

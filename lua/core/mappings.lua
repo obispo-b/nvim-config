@@ -25,6 +25,7 @@ nmap('<C-d>', '<C-d>zz', 'Move half page down and center')
 nmap('|', '<cmd>vsplit<cr>', 'Split window vertically')
 nmap('\\', '<cmd>split<cr>', 'Split window horizontally')
 
+xmap('<leader>y', '"+y', 'Copy to clipboard')
 xmap('<leader>p', '"_dP', 'Paste without overwriting clipboard')
 nmap(
   '<leader>s',
@@ -34,7 +35,7 @@ nmap(
 
 nmap('<esc>', '<cmd>noh<cr>', 'Clear search highlights')
 
-nmap('<leader>,', '<C-^>', 'Alternate between buffers')
+nmap('<leader>,', '<C-^>', 'Go to last buffer')
 
 -- Switch between split windows using Ctrl + hjkl
 nmap('<C-h>', '<C-w>h', 'Move to left split')

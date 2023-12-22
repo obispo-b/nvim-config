@@ -2,9 +2,7 @@ local nmap = require('core.keymap').nmap
 local vmap = require('core.keymap').vmap
 
 local toggleComment = function()
-  require('Comment.api').toggle.linewise.count(
-    vim.v.count > 0 and vim.v.count or 1
-  )
+  require('Comment.api').toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1)
 end
 
 nmap('<leader>/', toggleComment, 'Toggle comment')

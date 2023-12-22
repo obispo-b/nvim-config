@@ -6,6 +6,7 @@ cmp.setup({
     { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path' },
+    { name = 'orgmode' },
   },
   mapping = cmp.mapping.preset.insert({
     -- Enter key confirms completion item

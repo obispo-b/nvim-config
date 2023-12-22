@@ -2,8 +2,8 @@
 vim.cmd.colorscheme('gruvbox-material')
 
 -- Show line numbers
-vim.wo.number = true
-vim.wo.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 
 -- Show cursor line
 vim.o.breakindent = true
@@ -31,7 +31,7 @@ vim.opt.softtabstop = 2
 vim.opt.scrolloff = 8
 
 -- Disable highlight on search
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 
 -- Show sign column
 vim.wo.signcolumn = 'yes'
@@ -50,5 +50,10 @@ vim.g.netrw_altv = 1
 vim.g.netrw_winsize = 20
 vim.g.netrw_localrmdir = 'rm -r'
 
--- Set conceallevel to 2
+-- Set conceal level to 2
 vim.opt.conceallevel = 2
+
+-- Disable folded highlight
+-- vim.cmd('highlight Folded guibg=NONE ctermbg=NONE')
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldtext = 'v:lua.vim.treesitter.foldtext()'
