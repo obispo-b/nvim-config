@@ -3,11 +3,13 @@ local cmp = require('cmp')
 cmp.setup({
   sources = {
     { name = 'nvim_lsp' },
+    -- { name = 'nvim_lua' },
     { name = 'luasnip' },
     { name = 'buffer' },
     { name = 'path' },
     { name = 'orgmode' },
   },
+  formatting = require('lsp-zero').cmp_format(),
   mapping = cmp.mapping.preset.insert({
     -- Enter key confirms completion item
     ['<CR>'] = cmp.mapping.confirm({ select = true }),

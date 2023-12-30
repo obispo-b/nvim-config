@@ -16,6 +16,8 @@ nmap('<leader>fS', b.git_stash, 'Find Stash')
 nmap('<leader>fs', b.git_status, 'Find Status')
 nmap('<leader>fC', b.git_bcommits, 'Find Buffer Commits')
 nmap('<leader>fr', b.oldfiles, 'Find Recent Files')
+nmap('<leader>fk', b.keymaps, 'Find Keymaps')
+nmap('<leader>ft', b.colorscheme, 'Find Colorscheme')
 
 -- Config
 require('telescope').setup({
