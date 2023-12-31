@@ -1,6 +1,26 @@
 local plugins = {
-  { 'nvimtools/none-ls.nvim' },
-  { 'tpope/vim-fugitive' },
+  'nvimtools/none-ls.nvim',
+  'tpope/vim-fugitive',
+  'mbbill/undotree',
+  -- Lsp plugins
+  { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
+  'neovim/nvim-lspconfig',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'L3MON4D3/LuaSnip',
+  'simrat39/rust-tools.nvim',
+
+  'numToStr/Comment.nvim',
+  'folke/zen-mode.nvim',
+  'ThePrimeagen/harpoon',
+  'ThePrimeagen/vim-be-good',
+  'github/copilot.vim',
+  'akinsho/org-bullets.nvim',
+  'nvim-orgmode/orgmode',
   {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
@@ -22,10 +42,9 @@ local plugins = {
   },
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.4',
+    branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' },
   },
-  { 'akinsho/toggleterm.nvim', version = '*', config = true },
   {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
@@ -34,10 +53,6 @@ local plugins = {
       vim.fn['mkdp#util#install']()
     end,
   },
-  { 'folke/zen-mode.nvim' },
-  { 'ThePrimeagen/harpoon' },
-  { 'ThePrimeagen/vim-be-good' },
-  { 'github/copilot.vim' },
   {
     'windwp/nvim-ts-autotag',
     config = function()
@@ -65,9 +80,7 @@ local plugins = {
       vim.g.gruvbox_material_background = 'medium' -- hard, medium, soft
     end,
   },
-  {
-    'navarasu/onedark.nvim',
-  },
+  'navarasu/onedark.nvim',
   {
     'nvim-tree/nvim-tree.lua',
     version = '*',
@@ -79,20 +92,6 @@ local plugins = {
       require('nvim-tree').setup({})
     end,
   },
-  { 'mbbill/undotree' },
-  -- Lsp plugins
-  { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
-  { 'williamboman/mason.nvim' },
-  { 'williamboman/mason-lspconfig.nvim' },
-  { 'neovim/nvim-lspconfig' },
-  { 'hrsh7th/cmp-nvim-lsp' },
-  { 'hrsh7th/nvim-cmp' },
-  { 'hrsh7th/cmp-buffer' },
-  { 'hrsh7th/cmp-path' },
-  { 'L3MON4D3/LuaSnip' },
-  { 'simrat39/rust-tools.nvim' },
-
-  { 'numToStr/Comment.nvim' },
   {
     'folke/which-key.nvim',
     init = function()
@@ -105,36 +104,20 @@ local plugins = {
       -- refer to the configuration section below
     },
   },
-  -- {
-  --   'nvim-neorg/neorg',
-  --   build = ':Neorg sync-parsers',
-  --   dependencies = { 'nvim-lua/plenary.nvim' },
-  -- },
-  {
-    'nvim-orgmode/orgmode',
-    dependencies = {
-      { 'nvim-treesitter/nvim-treesitter', lazy = true },
-    },
-  },
 
   {
-    'akinsho/org-bullets.nvim',
-    config = function()
-      require('org-bullets').setup({
-        indent = true, -- Adds indentation guides to all levels
-        show_current_line = true, -- Show current item's bullet
-        concealcursor = false, -- If false then when the cursor is on a line underlying characters are visible
-        symbols = {
-          list = '•',
-          headlines = { '◉', '○', '✸', '✿' },
-          checkboxes = {
-            half = { '-', 'OrgTSCheckboxHalfChecked' },
-            done = { '✓', 'OrgDone' },
-            todo = { ' ', 'OrgTODO' },
-          },
-        },
-      })
-    end,
+    'folke/flash.nvim',
+    event = 'VeryLazy',
+    ---@type Flash.Config
+    opts = {},
+    -- stylua: ignore
+    keys = {
+      { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+      { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+      { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+      { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+    },
   },
 }
 
@@ -145,7 +128,7 @@ if not vim.loop.fs_stat(lazypath) then
     'clone',
     '--filter=blob:none',
     'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable', -- latest stable release
+    '--branch=stable',
     lazypath,
   })
 end
