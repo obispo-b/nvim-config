@@ -3,7 +3,6 @@ local plugins = {
   'tpope/vim-fugitive',
   'mbbill/undotree',
   -- Lsp plugins
-  { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
   'williamboman/mason.nvim',
   'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
@@ -21,6 +20,10 @@ local plugins = {
   'github/copilot.vim',
   'akinsho/org-bullets.nvim',
   'nvim-orgmode/orgmode',
+  {
+    'j-hui/fidget.nvim',
+    opts = {},
+  },
   {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
@@ -98,11 +101,7 @@ local plugins = {
       vim.o.timeout = true
       vim.o.timeoutlen = 300
     end,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    opts = {},
   },
 
   {

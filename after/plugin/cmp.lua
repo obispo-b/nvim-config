@@ -9,7 +9,6 @@ cmp.setup({
     { name = 'path' },
     { name = 'orgmode' },
   },
-  formatting = require('lsp-zero').cmp_format(),
   mapping = cmp.mapping.preset.insert({
     -- Enter key confirms completion item
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
