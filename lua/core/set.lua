@@ -44,11 +44,13 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 
 -- netrw
-vim.g.netrw_banner = 1
-vim.g.netrw_liststyle = 3
-vim.g.netrw_altv = 1
-vim.g.netrw_winsize = 20
-vim.g.netrw_localrmdir = 'rm -r'
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+-- vim.g.netrw_banner = 1
+-- vim.g.netrw_liststyle = 3
+-- vim.g.netrw_altv = 1
+-- vim.g.netrw_winsize = 20
+-- vim.g.netrw_localrmdir = 'rm -r'
 
 -- Set conceal level to 2
 vim.opt.conceallevel = 2

@@ -21,6 +21,11 @@ local plugins = {
   'akinsho/org-bullets.nvim',
   'nvim-orgmode/orgmode',
   {
+    'folke/trouble.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {},
+  },
+  {
     'j-hui/fidget.nvim',
     opts = {},
   },
@@ -64,11 +69,9 @@ local plugins = {
   },
   {
     'kylechui/nvim-surround',
-    version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    version = '*',
     config = function()
-      require('nvim-surround').setup({
-        -- Configuration here, or leave empty to use defaults
-      })
+      require('nvim-surround').setup()
     end,
   },
   {
@@ -106,7 +109,6 @@ local plugins = {
 
   {
     'folke/flash.nvim',
-    event = 'VeryLazy',
     ---@type Flash.Config
     opts = {},
     -- stylua: ignore
@@ -134,4 +136,4 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup(plugins, opts)
+require('lazy').setup(plugins, _)
