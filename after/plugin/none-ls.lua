@@ -4,7 +4,7 @@ local b = null_ls.builtins
 
 local sources = {
   -- webdev
-  b.formatting.prettierd.with({
+  b.formatting.prettier.with({
     filetypes = {
       'html',
       'markdown',
@@ -13,6 +13,7 @@ local sources = {
       'json',
       'typescript',
       'yaml',
+      'org',
     },
   }),
 
