@@ -53,7 +53,7 @@ vim.g.loaded_netrwPlugin = 1
 -- vim.g.netrw_localrmdir = 'rm -r'
 
 -- Set conceal level to 2
-vim.opt.conceallevel = 2
+vim.opt.conceallevel = 0
 
 -- Disable folded highlight
 -- vim.cmd('highlight Folded guibg=NONE ctermbg=NONE')
