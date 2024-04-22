@@ -17,6 +17,13 @@ local sources = {
     },
   }),
 
+  b.formatting.csharpier.with({
+    filetypes = {
+      'c#',
+      'cs',
+    },
+  }),
+
   -- bash
   b.formatting.shfmt,
 
