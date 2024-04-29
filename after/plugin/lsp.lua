@@ -51,7 +51,6 @@ require('mason-lspconfig').setup({
     'vimls',
     'html',
     'cssls',
-    'rust_analyzer',
   },
   handlers = {
     default_setup,
